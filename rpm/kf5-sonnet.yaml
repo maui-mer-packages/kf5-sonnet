@@ -1,0 +1,89 @@
+Name         : kf5-sonnet
+Version      : 4.99.0
+Release      : 1
+Group        : System/Base
+License      : GPLv2+
+Summary      : KDE Frameworks 5 Tier 1 solution for spell checking
+Description  : |
+  KDE Frameworks 5 Tier 1 solution for spell checking.
+URL          : http://www.kde.org
+SetupOptions : -q -n %{name}-%{version}/upstream
+
+Sources:
+    - "%{name}-%{version}.tar.xz"
+
+RpmLintIgnore:
+    - devel-file-in-non-devel-package
+    - no-changelogname-tag
+    - library-without-ldconfig-postin
+    - library-without-ldconfig-postun
+
+Configure    : none
+Builder      : none
+
+PkgBR:
+    - kf5-rpm-macros
+    - extra-cmake-modules
+    - qt5-tools
+    - libupnp-devel
+    - hspell-devel
+    - gettext-devel
+PkgConfigBR:
+    - Qt5Core
+    - Qt5DBus
+    - Qt5Xml
+    - Qt5Network
+    - Qt5Gui
+    - Qt5Widgets
+    - Qt5Concurrent
+    - Qt5Test
+    - systemd
+    - aspell
+    - hunspell
+    - zlib
+Requires:
+    - kf5-filesystem
+    - kf5-sonnet-core%{?_isa} = %{version}-%{release}
+    - kf5-sonnet-ui%{?_isa} = %{version}-%{release}
+
+RequiresPost:
+    - /sbin/ldconfig
+RequiresPostUn:
+    - /sbin/ldconfig
+
+Files:
+    - "%doc COPYING.LIB README.md"
+
+SubPackages:
+    - Name: devel
+      Group: Development/Libraries
+      Summary: Development files for %{name}
+      Description: |
+        The %{name}-devel package contains the files necessary to develop applications
+        that use %{name}.
+      Files:
+          - "%{_kf5_includedir}/sonnet_version.h"
+          - "%{_kf5_includedir}/SonnetCore"
+          - "%{_kf5_includedir}/SonnetUi"
+          - "%{_kf5_libdir}/libKF5SonnetCore.so"
+          - "%{_kf5_libdir}/libKF5SonnetUi.so"
+          - "%{_kf5_libdir}/cmake/KF5Sonnet"
+          - "%{_datadir}/qt5/mkspecs/modules/qt_SonnetCore.pri"
+          - "%{_datadir}/qt5/mkspecs/modules/qt_SonnetUi.pri"
+    - Name: core
+      Group: System/Libraries
+      Summary: Non-GUI part of the Sonnet framework
+      Description: |
+        Non-GUI part of the Sonnet framework provides low-level spell checking tools.
+      Files:
+          - "%{_kf5_libdir}/libKF5SonnetCore.so.*"
+          - "%{_kf5_plugindir}/sonnet_clients"
+          - "%{_kf5_datadir}/kf5/sonnet/trigrams.map"
+    - Name: gui
+      Group: System/Libraries
+      Summary: GUI part of the Sonnet framework
+      Description: |
+        GUI part of the Sonnet framework provides low-level spell checking tools.
+      Files:
+          - "%{_kf5_libdir}/libKF5SonnetUi.so.*"
+      FilesInput: sonnet5_qt.lang
