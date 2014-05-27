@@ -47,7 +47,7 @@ PkgConfigBR:
 Requires:
     - kf5-filesystem
     - kf5-sonnet-core%{?_isa} = %{version}-%{release}
-    - kf5-sonnet-ui%{?_isa} = %{version}-%{release}
+    - kf5-sonnet-gui%{?_isa} = %{version}-%{release}
 
 RequiresPost:
     - /sbin/ldconfig

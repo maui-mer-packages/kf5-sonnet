@@ -20,7 +20,7 @@ Source101:  kf5-sonnet-rpmlintrc
 Patch0:     sonnet-fix-plugins-path.patch
 Requires:   kf5-filesystem
 Requires:   kf5-sonnet-core%{?_isa} = %{version}-%{release}
-Requires:   kf5-sonnet-ui%{?_isa} = %{version}-%{release}
+Requires:   kf5-sonnet-gui%{?_isa} = %{version}-%{release}
 Requires(post): /sbin/ldconfig
 Requires(postun): /sbin/ldconfig
 BuildRequires:  pkgconfig(Qt5Core)
