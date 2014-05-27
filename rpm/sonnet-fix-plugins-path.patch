@@ -1,0 +1,60 @@
+From 979551edc5579429233f671a2de8e482f9116204 Mon Sep 17 00:00:00 2001
+From: Pier Luigi Fiorini <pierluigi.fiorini@gmail.com>
+Date: Tue, 27 May 2014 16:32:11 +0000
+Subject: [PATCH] Fix plugins path
+
+PLUGIN_INSTALL_DIR is supposed to carry the kf5/ name already.
+---
+ src/plugins/aspell/CMakeLists.txt   | 2 +-
+ src/plugins/enchant/CMakeLists.txt  | 2 +-
+ src/plugins/hspell/CMakeLists.txt   | 2 +-
+ src/plugins/hunspell/CMakeLists.txt | 2 +-
+ 4 files changed, 4 insertions(+), 4 deletions(-)
+
+diff --git a/src/plugins/aspell/CMakeLists.txt b/src/plugins/aspell/CMakeLists.txt
+index 37edb9d..63be29c 100644
+--- a/src/plugins/aspell/CMakeLists.txt
++++ b/src/plugins/aspell/CMakeLists.txt
+@@ -14,4 +14,4 @@ add_library(sonnet_aspell MODULE ${sonnet_aspell_PART_SRCS})
+ target_link_libraries(sonnet_aspell PRIVATE KF5::SonnetCore ${ASPELL_LIBRARIES})
+ 
+ set_target_properties(sonnet_aspell PROPERTIES OUTPUT_NAME "aspell")
+-install(TARGETS sonnet_aspell  DESTINATION ${PLUGIN_INSTALL_DIR}/kf5/sonnet/)
++install(TARGETS sonnet_aspell  DESTINATION ${PLUGIN_INSTALL_DIR}/sonnet/)
+diff --git a/src/plugins/enchant/CMakeLists.txt b/src/plugins/enchant/CMakeLists.txt
+index 082a260..117d026 100644
+--- a/src/plugins/enchant/CMakeLists.txt
++++ b/src/plugins/enchant/CMakeLists.txt
+@@ -11,5 +11,5 @@ add_library(kspell_enchant MODULE ${kspell_enchant_PART_SRCS})
+ target_link_libraries(kspell_enchant PRIVATE KF5::SonnetCore ${ENCHANT_LIBRARIES})
+ 
+ set_target_properties(kspell_enchant PROPERTIES OUTPUT_NAME "enchant")
+-install(TARGETS kspell_enchant DESTINATION ${PLUGIN_INSTALL_DIR}/kf5/sonnet/)
++install(TARGETS kspell_enchant DESTINATION ${PLUGIN_INSTALL_DIR}/sonnet/)
+ 
+diff --git a/src/plugins/hspell/CMakeLists.txt b/src/plugins/hspell/CMakeLists.txt
+index dac89c7..69c9df1 100644
+--- a/src/plugins/hspell/CMakeLists.txt
++++ b/src/plugins/hspell/CMakeLists.txt
+@@ -18,5 +18,5 @@ add_library(sonnet_hspell MODULE ${sonnet_hspell_PART_SRCS})
+ target_link_libraries(sonnet_hspell PRIVATE KF5::SonnetCore ${HSPELL_LIBRARIES} ${ZLIB_LIBRARY})
+ 
+ set_target_properties(sonnet_hspell PROPERTIES OUTPUT_NAME "hspell")
+-install(TARGETS sonnet_hspell  DESTINATION ${PLUGIN_INSTALL_DIR}/kf5/sonnet/)
++install(TARGETS sonnet_hspell  DESTINATION ${PLUGIN_INSTALL_DIR}/sonnet/)
+ 
+diff --git a/src/plugins/hunspell/CMakeLists.txt b/src/plugins/hunspell/CMakeLists.txt
+index 64b5e7e..81fc79e 100644
+--- a/src/plugins/hunspell/CMakeLists.txt
++++ b/src/plugins/hunspell/CMakeLists.txt
+@@ -10,6 +10,6 @@ add_library(sonnet_hunspell MODULE ${sonnet_hunspell_PART_SRCS})
+ target_link_libraries(sonnet_hunspell PRIVATE KF5::SonnetCore ${HUNSPELL_LIBRARIES})
+ 
+ set_target_properties(sonnet_hunspell PROPERTIES OUTPUT_NAME "hunspell")
+-install(TARGETS sonnet_hunspell  DESTINATION ${PLUGIN_INSTALL_DIR}/kf5/sonnet/)
++install(TARGETS sonnet_hunspell  DESTINATION ${PLUGIN_INSTALL_DIR}/sonnet/)
+ 
+ 
+-- 
+1.8.3-rc3
+

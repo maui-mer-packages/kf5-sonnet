@@ -12,6 +12,9 @@ SetupOptions : -q -n %{name}-%{version}/upstream
 Sources:
     - "%{name}-%{version}.tar.xz"
 
+Patches:
+    - sonnet-fix-plugins-path.patch
+
 RpmLintIgnore:
     - devel-file-in-non-devel-package
     - no-changelogname-tag
@@ -26,7 +29,7 @@ PkgBR:
     - extra-cmake-modules
     - qt5-tools
     - libupnp-devel
-    - hspell-devel
+#    - hspell-devel
     - gettext-devel
 PkgConfigBR:
     - Qt5Core
@@ -77,7 +80,7 @@ SubPackages:
         Non-GUI part of the Sonnet framework provides low-level spell checking tools.
       Files:
           - "%{_kf5_libdir}/libKF5SonnetCore.so.*"
-          - "%{_kf5_plugindir}/sonnet_clients"
+          - "%{_kf5_plugindir}/sonnet/"
           - "%{_kf5_datadir}/kf5/sonnet/trigrams.map"
     - Name: gui
       Group: System/Libraries
