@@ -17,7 +17,6 @@ URL:        http://www.kde.org
 Source0:    %{name}-%{version}.tar.xz
 Source100:  kf5-sonnet.yaml
 Source101:  kf5-sonnet-rpmlintrc
-Patch0:     sonnet-fix-plugins-path.patch
 Requires:   kf5-filesystem
 Requires:   kf5-sonnet-core%{?_isa} = %{version}-%{release}
 Requires:   kf5-sonnet-gui%{?_isa} = %{version}-%{release}
@@ -76,8 +75,6 @@ GUI part of the Sonnet framework provides low-level spell checking tools.
 %prep
 %setup -q -n %{name}-%{version}/upstream
 
-# sonnet-fix-plugins-path.patch
-%patch0 -p1
 # >> setup
 # << setup
 

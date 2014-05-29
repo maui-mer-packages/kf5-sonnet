@@ -12,9 +12,6 @@ SetupOptions : -q -n %{name}-%{version}/upstream
 Sources:
     - "%{name}-%{version}.tar.xz"
 
-Patches:
-    - sonnet-fix-plugins-path.patch
-
 RpmLintIgnore:
     - devel-file-in-non-devel-package
     - no-changelogname-tag
