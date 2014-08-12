@@ -43,8 +43,8 @@ PkgConfigBR:
     - zlib
 Requires:
     - kf5-filesystem
-    - kf5-sonnet-core%{?_isa} = %{version}-%{release}
-    - kf5-sonnet-gui%{?_isa} = %{version}-%{release}
+    - sonnet-core%{?_isa} = %{version}-%{release}
+    - sonnet-gui%{?_isa} = %{version}-%{release}
 
 RequiresPost:
     - /sbin/ldconfig

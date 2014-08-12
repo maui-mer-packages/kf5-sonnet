@@ -18,8 +18,8 @@ Source0:    %{name}-%{version}.tar.xz
 Source100:  sonnet.yaml
 Source101:  sonnet-rpmlintrc
 Requires:   kf5-filesystem
-Requires:   kf5-sonnet-core%{?_isa} = %{version}-%{release}
-Requires:   kf5-sonnet-gui%{?_isa} = %{version}-%{release}
+Requires:   sonnet-core%{?_isa} = %{version}-%{release}
+Requires:   sonnet-gui%{?_isa} = %{version}-%{release}
 Requires(post): /sbin/ldconfig
 Requires(postun): /sbin/ldconfig
 BuildRequires:  pkgconfig(Qt5Core)
