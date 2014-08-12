@@ -1,5 +1,5 @@
-Name         : kf5-sonnet
-Version      : 5.0.0
+Name         : sonnet
+Version      : 5.1.0
 Release      : 1
 Group        : System/Base
 License      : GPLv2+
@@ -67,9 +67,9 @@ SubPackages:
           - "%{_kf5_includedir}/SonnetUi"
           - "%{_kf5_libdir}/libKF5SonnetCore.so"
           - "%{_kf5_libdir}/libKF5SonnetUi.so"
-          - "%{_kf5_libdir}/cmake/KF5Sonnet"
-          - "%{_datadir}/qt5/mkspecs/modules/qt_SonnetCore.pri"
-          - "%{_datadir}/qt5/mkspecs/modules/qt_SonnetUi.pri"
+          - "%{_kf5_cmakedir}/KF5Sonnet"
+          - "%{_kf5_mkspecsdir}/qt_SonnetCore.pri"
+          - "%{_kf5_mkspecsdir}/qt_SonnetUi.pri"
     - Name: core
       Group: System/Libraries
       Summary: Non-GUI part of the Sonnet framework
