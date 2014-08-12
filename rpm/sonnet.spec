@@ -121,7 +121,7 @@ rm -rf %{buildroot}
 %defattr(-,root,root,-)
 %{_kf5_libdir}/libKF5SonnetCore.so.*
 %{_kf5_plugindir}/sonnet/
-%{_kf5_datadir}/kf5/sonnet/trigrams.map
+%{_kf5_datadir}/sonnet/trigrams.map
 # >> files core
 # << files core
 
