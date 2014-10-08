@@ -8,12 +8,6 @@ Name:       sonnet
 # >> macros
 # << macros
 
-# >> bcond_with
-# << bcond_with
-
-# >> bcond_without
-# << bcond_without
-
 Summary:    KDE Frameworks 5 Tier 1 solution for spell checking
 Version:    5.2.0
 Release:    1
@@ -79,7 +73,7 @@ GUI part of the Sonnet framework provides low-level spell checking tools.
 
 
 %prep
-%setup -q -n %{name}-%{version}/upstream
+%setup -q -n %{name}-%{version}
 
 # >> setup
 # << setup
